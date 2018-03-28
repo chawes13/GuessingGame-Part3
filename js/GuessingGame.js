@@ -83,10 +83,9 @@ function shuffle(arr){
 
 */
 
-var game = newGame();
-
 $(document).ready(function(){
 
+    var game = newGame(); //this should obscure the game object from the global object
     var title = $("#title");
     var subtitle = $("#subtitle");
     var resetBtn = $("#reset");
