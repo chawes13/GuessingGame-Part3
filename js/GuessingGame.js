@@ -103,17 +103,25 @@ $(document).ready(function(){
     });
 
     resetBtn.on('click', function(){
-        game = newGame();
-        title.text("Play the Guessing Game!");
-        subtitle.text("Guess a number between 1-100!");
-        playerInput.val("");
-        $(".guess").find("li").text("-");
-        enableInputs(true);
-        hint = game.provideHint();
+       reset();
+    });
+
+    $('body').on('keypress', function(e){
+        if(e.which === 82){
+            e.preventDefault();
+            reset();
+        }
     });
 
     helpBtn.on('click', function(){
-        title.text("The winning number is " +hint[0]+ ", "+hint[1]+", or " +hint[2]);
+        displayHelp();
+    });
+
+    $('body').on('keypress', function(e){
+        if(e.which === 72){
+            e.preventDefault();
+            displayHelp();
+        }
     });
 
     //Controller
@@ -158,6 +166,7 @@ $(document).ready(function(){
     function enableInputs(enable){
         if(enable){
             playerInput.removeAttr('disabled');
+            playerInput.focus();
             submitBtn.removeAttr('disabled');
             helpBtn.removeAttr('disabled');
         } else {
@@ -165,6 +174,20 @@ $(document).ready(function(){
             submitBtn.attr('disabled', true);
             helpBtn.attr('disabled', true);
         }
+    }
+
+    function reset(){
+        game = newGame();
+        title.text("Play the Guessing Game!");
+        subtitle.text("Guess a number between 1-100!");
+        playerInput.val("");
+        $(".guess").find("li").text("-");
+        enableInputs(true);
+        hint = game.provideHint();
+    }
+
+    function displayHelp(){
+        title.text("The winning number is " +hint[0]+ ", "+hint[1]+", or " +hint[2]);
     }
 
 });

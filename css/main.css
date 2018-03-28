@@ -4,12 +4,16 @@
 
 .background-layer {
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.6);
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     z-index: -1;
+}
+
+.underline {
+    text-decoration: underline;
 }
 
 .guess li {
@@ -19,6 +23,7 @@
     font-size: 60px;
     padding: 0 20px;
     margin: 10px 0;
+    background-color: white;
 }      
 
 body {
@@ -52,7 +57,12 @@ img {
     width: 160px;
     font-size: 60px;
     text-align: center;
-    outline: none;
+    border: none;
+}
+
+#player-input:focus {
+    box-shadow: 0 0 3pt 2pt green;
+    outline: 0;
 }
 
 #submit {
