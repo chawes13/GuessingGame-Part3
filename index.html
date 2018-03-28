@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Guessing Game</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <body>
+    <div class="background-layer"></div>
+    <div id='app' class="container center">
+
+        <div id='headers'>
+          <h1 id="title">Play the Guessing Game!</h1>
+          <h3 id="subtitle">Guess a number between 1-100!</h3>
+        </div>
+
+        <div id='main'>
+          <div id='input-parent'>
+              <input id="player-input" type="text" placeholder="#" maxlength="3" autofocus autocomplete="off">
+              <button id="submit" class="btn btn-success" type="button">Go!</button>
+          </div>
+
+          <div id='guesses'>
+            <ul class="guess">
+                <li>-</li>
+                <li>-</li>
+                <li>-</li>
+                <li>-</li>
+                <li>-</li>
+            </ul>
+          </div>
+
+          <div id="menu-btns">
+            <input id="reset" class="btn btn-danger btn-sm" type="reset">
+            <button id="help" class="btn btn-info btn-sm" type="button">Help</button>
+          </div>
+        </div>
+    </div>
+
+    <div id='footer' class="center">
+        <div class="row">
+          <div class="col-sm">
+            <img src='img/fa-logo@2x.png'></img>
+          </div>
+
+          <div class="col-sm">
+            <h4>Project by Conor Hawes</h4>
+          </div>
+
+          <div class="col-sm">
+            <img src='img/grace_hopper_academy.png'></img>
+          </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/GuessingGame.js"></script>
+  </body>
+</html>
